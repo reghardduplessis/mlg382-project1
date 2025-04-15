@@ -1,480 +1,480 @@
-StudentID,GradeClass,Predicted,ActualGrade,PredictedGrade,Match
-2671,4.0,4,F,F,True
-2892,4.0,4,F,F,True
-2403,4.0,3,F,D,False
-1516,2.0,2,C,C,True
-1437,1.0,1,B,B,True
-2995,2.0,3,C,D,False
-3132,1.0,1,B,B,True
-3232,4.0,4,F,F,True
-1118,4.0,4,F,F,True
-2026,4.0,4,F,F,True
-1774,4.0,4,F,F,True
-2682,3.0,3,D,D,True
-3051,4.0,4,F,F,True
-2167,2.0,2,C,C,True
-2274,3.0,2,D,C,False
-2103,1.0,2,B,C,False
-1469,4.0,4,F,F,True
-1372,4.0,4,F,F,True
-3091,4.0,4,F,F,True
-2715,4.0,4,F,F,True
-2575,2.0,2,C,C,True
-1023,4.0,4,F,F,True
-1008,4.0,4,F,F,True
-1571,2.0,3,C,D,False
-3172,4.0,4,F,F,True
-2264,2.0,3,C,D,False
-1910,3.0,3,D,D,True
-1186,4.0,4,F,F,True
-2216,3.0,2,D,C,False
-2755,4.0,4,F,F,True
-2203,4.0,4,F,F,True
-1558,0.0,1,A,B,False
-1153,4.0,4,F,F,True
-1670,4.0,4,F,F,True
-1462,3.0,3,D,D,True
-1057,4.0,4,F,F,True
-1978,4.0,4,F,F,True
-2994,4.0,4,F,F,True
-2792,3.0,3,D,D,True
-3085,2.0,1,C,B,False
-3295,0.0,4,A,F,False
-3092,4.0,4,F,F,True
-1931,4.0,4,F,F,True
-2902,2.0,2,C,C,True
-2640,1.0,1,B,B,True
-2786,3.0,4,D,F,False
-1144,3.0,4,D,F,False
-2405,4.0,4,F,F,True
-2819,4.0,4,F,F,True
-1312,1.0,2,B,C,False
-1925,4.0,4,F,F,True
-1573,2.0,3,C,D,False
-2391,4.0,4,F,F,True
-1484,4.0,4,F,F,True
-1072,4.0,4,F,F,True
-2568,4.0,4,F,F,True
-1790,4.0,4,F,F,True
-2256,1.0,2,B,C,False
-2508,0.0,1,A,B,False
-2477,3.0,3,D,D,True
-2907,2.0,3,C,D,False
-2028,3.0,4,D,F,False
-1318,1.0,1,B,B,True
-2156,4.0,4,F,F,True
-2761,4.0,4,F,F,True
-3166,3.0,3,D,D,True
-1423,1.0,2,B,C,False
-1717,0.0,1,A,B,False
-1990,3.0,2,D,C,False
-2310,4.0,4,F,F,True
-2070,3.0,3,D,D,True
-2673,4.0,4,F,F,True
-1299,2.0,3,C,D,False
-2177,1.0,1,B,B,True
-2233,4.0,4,F,F,True
-2099,4.0,4,F,F,True
-1297,1.0,1,B,B,True
-2023,1.0,1,B,B,True
-1988,3.0,4,D,F,False
-2650,3.0,3,D,D,True
-1240,4.0,4,F,F,True
-3056,4.0,4,F,F,True
-1686,3.0,2,D,C,False
-1119,4.0,4,F,F,True
-1003,4.0,4,F,F,True
-2229,4.0,4,F,F,True
-3053,4.0,4,F,F,True
-1706,3.0,4,D,F,False
-2843,4.0,4,F,F,True
-2941,4.0,4,F,F,True
-1438,4.0,4,F,F,True
-1711,3.0,3,D,D,True
-1598,4.0,4,F,F,True
-2594,4.0,4,F,F,True
-2684,4.0,3,F,D,False
-2929,3.0,2,D,C,False
-2008,1.0,1,B,B,True
-3324,3.0,2,D,C,False
-2827,4.0,4,F,F,True
-2248,4.0,4,F,F,True
-2899,4.0,4,F,F,True
-3043,4.0,4,F,F,True
-1544,3.0,3,D,D,True
-1288,4.0,4,F,F,True
-2502,4.0,4,F,F,True
-2931,4.0,4,F,F,True
-2776,4.0,4,F,F,True
-2404,3.0,3,D,D,True
-2127,4.0,4,F,F,True
-2705,2.0,2,C,C,True
-1433,4.0,4,F,F,True
-1805,4.0,4,F,F,True
-2466,4.0,4,F,F,True
-2265,3.0,4,D,F,False
-1114,4.0,4,F,F,True
-1796,4.0,4,F,F,True
-1776,1.0,2,B,C,False
-3278,0.0,2,A,C,False
-1861,4.0,4,F,F,True
-2768,4.0,4,F,F,True
-2009,2.0,2,C,C,True
-2267,4.0,4,F,F,True
-2259,3.0,3,D,D,True
-2829,3.0,2,D,C,False
-1358,1.0,1,B,B,True
-2616,4.0,2,F,C,False
-1767,4.0,4,F,F,True
-1519,4.0,4,F,F,True
-3221,0.0,4,A,F,False
-1890,3.0,3,D,D,True
-2815,4.0,4,F,F,True
-1059,2.0,2,C,C,True
-2539,1.0,1,B,B,True
-1779,4.0,4,F,F,True
-2993,2.0,3,C,D,False
-3247,4.0,4,F,F,True
-2703,4.0,4,F,F,True
-2140,3.0,3,D,D,True
-1666,3.0,4,D,F,False
-2689,2.0,2,C,C,True
-3261,4.0,2,F,C,False
-3077,2.0,2,C,C,True
-2041,4.0,4,F,F,True
-1992,4.0,4,F,F,True
-2281,1.0,1,B,B,True
-3287,1.0,4,B,F,False
-2519,4.0,4,F,F,True
-1808,4.0,4,F,F,True
-1770,2.0,3,C,D,False
-1983,4.0,4,F,F,True
-1512,4.0,4,F,F,True
-1239,4.0,4,F,F,True
-1341,4.0,4,F,F,True
-3093,2.0,2,C,C,True
-1966,1.0,1,B,B,True
-1091,4.0,4,F,F,True
-1941,4.0,4,F,F,True
-3341,2.0,4,C,F,False
-1731,2.0,3,C,D,False
-1955,1.0,2,B,C,False
-2325,4.0,4,F,F,True
-1882,4.0,4,F,F,True
-2025,4.0,4,F,F,True
-3194,4.0,4,F,F,True
-2269,4.0,4,F,F,True
-3231,3.0,4,D,F,False
-1366,4.0,4,F,F,True
-3386,1.0,4,B,F,False
-1999,2.0,1,C,B,False
-1680,4.0,4,F,F,True
-2686,4.0,4,F,F,True
-1834,2.0,2,C,C,True
-3269,3.0,1,D,B,False
-1254,1.0,2,B,C,False
-3142,2.0,2,C,C,True
-3171,4.0,4,F,F,True
-1322,2.0,2,C,C,True
-1407,2.0,2,C,C,True
-2589,3.0,3,D,D,True
-1511,4.0,4,F,F,True
-1975,4.0,4,F,F,True
-1053,4.0,4,F,F,True
-2612,4.0,4,F,F,True
-1889,2.0,2,C,C,True
-2350,4.0,4,F,F,True
-3392,1.0,4,B,F,False
-3183,2.0,4,C,F,False
-1194,3.0,3,D,D,True
-2817,2.0,2,C,C,True
-1724,2.0,3,C,D,False
-1357,1.0,1,B,B,True
-3006,3.0,4,D,F,False
-3034,4.0,4,F,F,True
-3118,3.0,2,D,C,False
-1243,2.0,2,C,C,True
-2644,4.0,4,F,F,True
-1487,3.0,3,D,D,True
-3111,4.0,4,F,F,True
-1857,4.0,4,F,F,True
-2340,4.0,4,F,F,True
-1349,4.0,3,F,D,False
-1315,2.0,2,C,C,True
-2797,1.0,1,B,B,True
-1171,4.0,4,F,F,True
-2517,3.0,4,D,F,False
-1710,4.0,4,F,F,True
-1824,4.0,4,F,F,True
-1762,3.0,2,D,C,False
-1789,4.0,4,F,F,True
-2307,2.0,2,C,C,True
-2205,2.0,2,C,C,True
-1400,1.0,2,B,C,False
-1397,4.0,4,F,F,True
-2181,4.0,4,F,F,True
-2245,1.0,1,B,B,True
-2583,2.0,2,C,C,True
-1664,4.0,4,F,F,True
-2666,4.0,4,F,F,True
-2926,2.0,3,C,D,False
-1011,3.0,4,D,F,False
-1784,4.0,4,F,F,True
-1692,4.0,4,F,F,True
-2976,4.0,4,F,F,True
-2241,1.0,1,B,B,True
-2290,1.0,2,B,C,False
-1665,4.0,4,F,F,True
-3175,4.0,4,F,F,True
-2133,2.0,2,C,C,True
-2295,4.0,4,F,F,True
-1595,2.0,2,C,C,True
-2084,4.0,4,F,F,True
-2872,1.0,1,B,B,True
-2448,1.0,1,B,B,True
-3203,3.0,1,D,B,False
-1654,3.0,3,D,D,True
-1325,2.0,1,C,B,False
-1652,4.0,4,F,F,True
-1946,1.0,1,B,B,True
-3062,4.0,4,F,F,True
-3155,2.0,2,C,C,True
-2273,2.0,2,C,C,True
-2775,3.0,2,D,C,False
-2973,4.0,4,F,F,True
-1547,3.0,2,D,C,False
-2393,4.0,4,F,F,True
-2655,4.0,4,F,F,True
-2757,2.0,2,C,C,True
-2412,4.0,4,F,F,True
-1750,2.0,2,C,C,True
-1100,4.0,4,F,F,True
-2988,4.0,4,F,F,True
-2499,3.0,3,D,D,True
-3050,2.0,3,C,D,False
-2637,4.0,4,F,F,True
-2830,4.0,4,F,F,True
-2175,4.0,4,F,F,True
-3021,4.0,4,F,F,True
-2027,3.0,3,D,D,True
-3029,0.0,1,A,B,False
-1578,4.0,4,F,F,True
-3328,4.0,3,F,D,False
-2512,4.0,4,F,F,True
-2937,4.0,4,F,F,True
-1121,3.0,4,D,F,False
-2164,2.0,1,C,B,False
-2442,4.0,4,F,F,True
-1761,3.0,3,D,D,True
-2992,3.0,4,D,F,False
-1111,1.0,1,B,B,True
-2055,4.0,4,F,F,True
-2729,4.0,4,F,F,True
-2320,4.0,4,F,F,True
-1678,1.0,1,B,B,True
-1306,3.0,3,D,D,True
-3291,0.0,3,A,D,False
-2460,4.0,4,F,F,True
-1836,4.0,4,F,F,True
-1374,3.0,3,D,D,True
-2839,3.0,3,D,D,True
-1073,2.0,3,C,D,False
-2871,1.0,1,B,B,True
-1869,4.0,4,F,F,True
-2718,4.0,4,F,F,True
-1218,2.0,2,C,C,True
-2212,4.0,4,F,F,True
-1494,4.0,4,F,F,True
-3315,2.0,2,C,C,True
-1885,0.0,1,A,B,False
-2429,4.0,4,F,F,True
-2247,4.0,4,F,F,True
-2540,2.0,2,C,C,True
-2691,2.0,1,C,B,False
-1859,2.0,1,C,B,False
-2635,4.0,4,F,F,True
-1977,3.0,4,D,F,False
-3122,4.0,4,F,F,True
-1163,0.0,1,A,B,False
-1552,3.0,3,D,D,True
-2079,1.0,1,B,B,True
-3076,2.0,2,C,C,True
-1174,2.0,2,C,C,True
-2918,2.0,2,C,C,True
-2139,3.0,2,D,C,False
-3321,3.0,4,D,F,False
-3066,4.0,4,F,F,True
-1460,1.0,1,B,B,True
-3144,0.0,1,A,B,False
-2848,4.0,4,F,F,True
-1632,2.0,2,C,C,True
-2262,3.0,2,D,C,False
-2735,4.0,4,F,F,True
-2668,3.0,3,D,D,True
-2122,4.0,4,F,F,True
-2355,4.0,4,F,F,True
-3186,4.0,4,F,F,True
-1444,3.0,3,D,D,True
-2645,4.0,4,F,F,True
-2282,4.0,4,F,F,True
-2636,3.0,3,D,D,True
-3126,3.0,3,D,D,True
-2832,4.0,4,F,F,True
-2578,4.0,4,F,F,True
-1052,4.0,3,F,D,False
-2197,2.0,2,C,C,True
-1619,3.0,3,D,D,True
-2893,4.0,4,F,F,True
-2186,4.0,4,F,F,True
-2452,4.0,3,F,D,False
-2094,4.0,4,F,F,True
-2828,1.0,1,B,B,True
-1942,4.0,4,F,F,True
-1954,4.0,4,F,F,True
-1965,2.0,2,C,C,True
-1145,3.0,2,D,C,False
-1066,1.0,1,B,B,True
-1071,2.0,2,C,C,True
-1140,3.0,4,D,F,False
-2032,4.0,4,F,F,True
-2713,4.0,4,F,F,True
-2814,4.0,4,F,F,True
-1627,4.0,4,F,F,True
-2679,4.0,4,F,F,True
-1223,4.0,4,F,F,True
-2121,0.0,1,A,B,False
-1601,3.0,3,D,D,True
-2291,4.0,4,F,F,True
-2986,1.0,2,B,C,False
-2143,4.0,4,F,F,True
-1083,2.0,2,C,C,True
-2014,4.0,4,F,F,True
-1200,4.0,4,F,F,True
-2001,4.0,4,F,F,True
-2900,1.0,1,B,B,True
-1126,2.0,3,C,D,False
-2169,3.0,4,D,F,False
-3262,3.0,2,D,C,False
-2870,4.0,4,F,F,True
-1131,3.0,2,D,C,False
-2489,4.0,4,F,F,True
-1402,1.0,2,B,C,False
-3308,3.0,4,D,F,False
-2823,4.0,4,F,F,True
-1939,4.0,4,F,F,True
-3387,4.0,4,F,F,True
-2617,1.0,2,B,C,False
-3134,4.0,4,F,F,True
-2171,4.0,4,F,F,True
-1530,4.0,4,F,F,True
-2847,2.0,2,C,C,True
-2209,4.0,4,F,F,True
-1597,2.0,2,C,C,True
-2546,2.0,2,C,C,True
-1819,4.0,4,F,F,True
-1320,3.0,3,D,D,True
-3008,4.0,4,F,F,True
-2131,3.0,4,D,F,False
-3089,4.0,4,F,F,True
-1642,4.0,4,F,F,True
-3240,1.0,3,B,D,False
-1811,4.0,4,F,F,True
-1852,4.0,4,F,F,True
-3378,2.0,2,C,C,True
-1061,4.0,3,F,D,False
-3014,0.0,2,A,C,False
-1613,4.0,4,F,F,True
-3012,2.0,1,C,B,False
-2441,4.0,4,F,F,True
-2080,4.0,4,F,F,True
-2903,0.0,1,A,B,False
-2894,4.0,4,F,F,True
-3338,0.0,4,A,F,False
-2822,3.0,4,D,F,False
-2562,3.0,3,D,D,True
-2146,4.0,4,F,F,True
-3325,3.0,4,D,F,False
-2917,1.0,1,B,B,True
-1255,4.0,4,F,F,True
-1362,3.0,3,D,D,True
-1715,4.0,4,F,F,True
-2774,4.0,4,F,F,True
-3281,1.0,1,B,B,True
-3383,3.0,4,D,F,False
-1037,4.0,4,F,F,True
-1424,0.0,1,A,B,False
-3148,4.0,4,F,F,True
-2386,2.0,2,C,C,True
-3120,4.0,4,F,F,True
-2844,1.0,2,B,C,False
-1644,4.0,4,F,F,True
-2398,4.0,4,F,F,True
-2561,4.0,4,F,F,True
-1360,4.0,3,F,D,False
-1926,0.0,1,A,B,False
-3070,4.0,4,F,F,True
-3123,4.0,4,F,F,True
-2535,4.0,4,F,F,True
-1602,4.0,4,F,F,True
-2932,3.0,3,D,D,True
-1962,0.0,1,A,B,False
-1435,2.0,2,C,C,True
-2951,1.0,2,B,C,False
-1227,4.0,4,F,F,True
-3255,1.0,4,B,F,False
-1837,2.0,2,C,C,True
-3332,2.0,1,C,B,False
-1167,2.0,3,C,D,False
-2773,4.0,4,F,F,True
-2149,3.0,2,D,C,False
-1736,4.0,4,F,F,True
-2062,1.0,1,B,B,True
-1313,4.0,4,F,F,True
-2022,2.0,2,C,C,True
-2965,4.0,3,F,D,False
-2484,4.0,4,F,F,True
-1555,1.0,1,B,B,True
-1302,4.0,4,F,F,True
-2056,2.0,2,C,C,True
-1611,4.0,4,F,F,True
-1471,1.0,1,B,B,True
-3249,3.0,4,D,F,False
-1025,4.0,4,F,F,True
-1036,4.0,4,F,F,True
-1351,4.0,4,F,F,True
-1044,2.0,2,C,C,True
-1286,4.0,4,F,F,True
-2752,4.0,4,F,F,True
-2314,3.0,4,D,F,False
-1473,1.0,1,B,B,True
-1256,3.0,2,D,C,False
-1674,4.0,4,F,F,True
-1058,4.0,4,F,F,True
-1353,2.0,1,C,B,False
-1212,4.0,4,F,F,True
-3160,4.0,4,F,F,True
-2236,0.0,1,A,B,False
-2132,1.0,2,B,C,False
-1577,4.0,4,F,F,True
-2130,4.0,4,F,F,True
-2873,3.0,3,D,D,True
-2083,3.0,2,D,C,False
-2050,4.0,4,F,F,True
-2507,2.0,2,C,C,True
-3211,3.0,4,D,F,False
-2699,2.0,2,C,C,True
-2366,4.0,4,F,F,True
-2337,2.0,2,C,C,True
-1671,4.0,4,F,F,True
-2677,4.0,4,F,F,True
-3202,2.0,4,C,F,False
-1802,4.0,4,F,F,True
-2074,4.0,4,F,F,True
-3263,1.0,4,B,F,False
-2726,4.0,4,F,F,True
-2458,4.0,4,F,F,True
-3177,3.0,1,D,B,False
-2228,0.0,1,A,B,False
-3292,0.0,2,A,C,False
-1394,4.0,4,F,F,True
-2724,4.0,4,F,F,True
+StudentID,GradeClass,Predicted,ActualGrade,PredictedGrade,Match,RiskLevel
+2594,4.0,4,F,F,True,At-Risk
+2832,4.0,4,F,F,True,At-Risk
+2568,4.0,4,F,F,True,At-Risk
+2203,4.0,4,F,F,True,At-Risk
+1674,4.0,4,F,F,True,At-Risk
+1577,4.0,4,F,F,True,At-Risk
+2484,4.0,4,F,F,True,At-Risk
+1297,1.0,1,B,B,True,On Track
+2320,4.0,4,F,F,True,At-Risk
+2026,4.0,4,F,F,True,At-Risk
+3062,4.0,4,F,F,True,At-Risk
+2366,4.0,4,F,F,True,At-Risk
+2502,4.0,4,F,F,True,At-Risk
+2871,1.0,1,B,B,True,On Track
+1552,3.0,3,D,D,True,At-Risk
+1686,3.0,2,D,C,False,On Track
+2839,3.0,3,D,D,True,At-Risk
+1435,2.0,2,C,C,True,On Track
+1954,4.0,4,F,F,True,At-Risk
+1424,0.0,1,A,B,False,On Track
+1131,3.0,2,D,C,False,On Track
+2578,4.0,4,F,F,True,At-Risk
+3211,3.0,4,D,F,False,At-Risk
+2156,4.0,4,F,F,True,At-Risk
+1053,4.0,4,F,F,True,At-Risk
+2671,4.0,4,F,F,True,At-Risk
+1460,1.0,1,B,B,True,On Track
+2682,3.0,3,D,D,True,At-Risk
+1595,2.0,2,C,C,True,On Track
+2074,4.0,4,F,F,True,At-Risk
+2056,2.0,2,C,C,True,On Track
+2926,2.0,3,C,D,False,At-Risk
+1670,4.0,4,F,F,True,At-Risk
+1438,4.0,4,F,F,True,At-Risk
+2340,4.0,4,F,F,True,At-Risk
+3093,2.0,2,C,C,True,On Track
+1642,4.0,4,F,F,True,At-Risk
+3091,4.0,4,F,F,True,At-Risk
+2070,3.0,3,D,D,True,At-Risk
+1091,4.0,4,F,F,True,At-Risk
+2023,1.0,1,B,B,True,On Track
+3085,2.0,1,C,B,False,On Track
+3281,1.0,1,B,B,True,On Track
+3325,3.0,4,D,F,False,At-Risk
+1299,2.0,3,C,D,False,At-Risk
+1254,1.0,2,B,C,False,On Track
+1036,4.0,4,F,F,True,At-Risk
+3261,4.0,2,F,C,False,On Track
+1761,3.0,3,D,D,True,At-Risk
+2713,4.0,4,F,F,True,At-Risk
+1052,4.0,3,F,D,False,At-Risk
+3066,4.0,4,F,F,True,At-Risk
+1988,3.0,4,D,F,False,At-Risk
+2539,1.0,1,B,B,True,On Track
+1059,2.0,2,C,C,True,On Track
+3392,1.0,4,B,F,False,At-Risk
+1975,4.0,4,F,F,True,At-Risk
+2197,2.0,2,C,C,True,On Track
+2668,3.0,3,D,D,True,At-Risk
+2236,0.0,1,A,B,False,On Track
+2133,2.0,2,C,C,True,On Track
+1750,2.0,2,C,C,True,On Track
+2177,1.0,1,B,B,True,On Track
+2650,3.0,3,D,D,True,At-Risk
+2637,4.0,4,F,F,True,At-Risk
+1966,1.0,1,B,B,True,On Track
+2774,4.0,4,F,F,True,At-Risk
+2458,4.0,4,F,F,True,At-Risk
+2205,2.0,2,C,C,True,On Track
+3255,1.0,4,B,F,False,At-Risk
+2726,4.0,4,F,F,True,At-Risk
+1802,4.0,4,F,F,True,At-Risk
+2265,3.0,4,D,F,False,At-Risk
+3043,4.0,4,F,F,True,At-Risk
+1145,3.0,2,D,C,False,On Track
+2099,4.0,4,F,F,True,At-Risk
+2951,1.0,2,B,C,False,On Track
+2103,1.0,2,B,C,False,On Track
+3292,0.0,2,A,C,False,On Track
+2546,2.0,2,C,C,True,On Track
+2715,4.0,4,F,F,True,At-Risk
+2735,4.0,4,F,F,True,At-Risk
+2022,2.0,2,C,C,True,On Track
+1790,4.0,4,F,F,True,At-Risk
+1400,1.0,2,B,C,False,On Track
+1358,1.0,1,B,B,True,On Track
+2636,3.0,3,D,D,True,At-Risk
+3177,3.0,1,D,B,False,On Track
+3008,4.0,4,F,F,True,At-Risk
+2844,1.0,2,B,C,False,On Track
+2264,2.0,3,C,D,False,At-Risk
+1100,4.0,4,F,F,True,At-Risk
+2146,4.0,4,F,F,True,At-Risk
+1167,2.0,3,C,D,False,At-Risk
+1931,4.0,4,F,F,True,At-Risk
+2295,4.0,4,F,F,True,At-Risk
+3278,0.0,2,A,C,False,On Track
+2140,3.0,3,D,D,True,At-Risk
+2307,2.0,2,C,C,True,On Track
+2398,4.0,4,F,F,True,At-Risk
+1770,2.0,3,C,D,False,At-Risk
+2122,4.0,4,F,F,True,At-Risk
+1008,4.0,4,F,F,True,At-Risk
+3186,4.0,4,F,F,True,At-Risk
+1144,3.0,4,D,F,False,At-Risk
+1715,4.0,4,F,F,True,At-Risk
+2212,4.0,4,F,F,True,At-Risk
+2517,3.0,4,D,F,False,At-Risk
+2612,4.0,4,F,F,True,At-Risk
+2917,1.0,1,B,B,True,On Track
+2256,1.0,2,B,C,False,On Track
+3269,3.0,1,D,B,False,On Track
+1767,4.0,4,F,F,True,At-Risk
+3383,3.0,4,D,F,False,At-Risk
+3172,4.0,4,F,F,True,At-Risk
+1372,4.0,4,F,F,True,At-Risk
+1423,1.0,2,B,C,False,On Track
+3341,2.0,4,C,F,False,At-Risk
+3053,4.0,4,F,F,True,At-Risk
+1558,0.0,1,A,B,False,On Track
+1003,4.0,4,F,F,True,At-Risk
+3202,2.0,4,C,F,False,At-Risk
+3089,4.0,4,F,F,True,At-Risk
+1322,2.0,2,C,C,True,On Track
+2773,4.0,4,F,F,True,At-Risk
+2130,4.0,4,F,F,True,At-Risk
+2684,4.0,3,F,D,False,At-Risk
+2442,4.0,4,F,F,True,At-Risk
+2143,4.0,4,F,F,True,At-Risk
+1360,4.0,3,F,D,False,At-Risk
+3123,4.0,4,F,F,True,At-Risk
+2393,4.0,4,F,F,True,At-Risk
+2965,4.0,3,F,D,False,At-Risk
+2848,4.0,4,F,F,True,At-Risk
+2995,2.0,3,C,D,False,At-Risk
+1776,1.0,2,B,C,False,On Track
+2786,3.0,4,D,F,False,At-Risk
+1469,4.0,4,F,F,True,At-Risk
+1351,4.0,4,F,F,True,At-Risk
+1530,4.0,4,F,F,True,At-Risk
+1516,2.0,2,C,C,True,On Track
+2691,2.0,1,C,B,False,On Track
+2907,2.0,3,C,D,False,At-Risk
+1433,4.0,4,F,F,True,At-Risk
+2062,1.0,1,B,B,True,On Track
+2655,4.0,4,F,F,True,At-Risk
+2755,4.0,4,F,F,True,At-Risk
+1977,3.0,4,D,F,False,At-Risk
+2337,2.0,2,C,C,True,On Track
+1910,3.0,3,D,D,True,At-Risk
+3232,4.0,4,F,F,True,At-Risk
+1394,4.0,4,F,F,True,At-Risk
+2127,4.0,4,F,F,True,At-Risk
+2175,4.0,4,F,F,True,At-Risk
+2314,3.0,4,D,F,False,At-Risk
+1861,4.0,4,F,F,True,At-Risk
+1114,4.0,4,F,F,True,At-Risk
+1665,4.0,4,F,F,True,At-Risk
+1962,0.0,1,A,B,False,On Track
+2281,1.0,1,B,B,True,On Track
+3262,3.0,2,D,C,False,On Track
+3134,4.0,4,F,F,True,At-Risk
+3171,4.0,4,F,F,True,At-Risk
+3118,3.0,2,D,C,False,On Track
+2644,4.0,4,F,F,True,At-Risk
+2149,3.0,2,D,C,False,On Track
+3077,2.0,2,C,C,True,On Track
+2001,4.0,4,F,F,True,At-Risk
+1717,0.0,1,A,B,False,On Track
+2699,2.0,2,C,C,True,On Track
+1999,2.0,1,C,B,False,On Track
+2823,4.0,4,F,F,True,At-Risk
+1353,2.0,1,C,B,False,On Track
+2976,4.0,4,F,F,True,At-Risk
+2705,2.0,2,C,C,True,On Track
+1111,1.0,1,B,B,True,On Track
+3287,1.0,4,B,F,False,At-Risk
+2412,4.0,4,F,F,True,At-Risk
+1341,4.0,4,F,F,True,At-Risk
+2988,4.0,4,F,F,True,At-Risk
+1789,4.0,4,F,F,True,At-Risk
+1119,4.0,4,F,F,True,At-Risk
+2893,4.0,4,F,F,True,At-Risk
+3231,3.0,4,D,F,False,At-Risk
+1286,4.0,4,F,F,True,At-Risk
+1066,1.0,1,B,B,True,On Track
+2233,4.0,4,F,F,True,At-Risk
+2752,4.0,4,F,F,True,At-Risk
+3034,4.0,4,F,F,True,At-Risk
+1223,4.0,4,F,F,True,At-Risk
+2768,4.0,4,F,F,True,At-Risk
+3338,0.0,4,A,F,False,At-Risk
+1885,0.0,1,A,B,False,On Track
+2918,2.0,2,C,C,True,On Track
+1627,4.0,4,F,F,True,At-Risk
+1171,4.0,4,F,F,True,At-Risk
+2872,1.0,1,B,B,True,On Track
+2535,4.0,4,F,F,True,At-Risk
+2847,2.0,2,C,C,True,On Track
+2937,4.0,4,F,F,True,At-Risk
+1978,4.0,4,F,F,True,At-Risk
+1487,3.0,3,D,D,True,At-Risk
+2689,2.0,2,C,C,True,On Track
+2562,3.0,3,D,D,True,At-Risk
+1784,4.0,4,F,F,True,At-Risk
+3332,2.0,1,C,B,False,On Track
+3291,0.0,3,A,D,False,At-Risk
+2477,3.0,3,D,D,True,At-Risk
+1805,4.0,4,F,F,True,At-Risk
+2247,4.0,4,F,F,True,At-Risk
+3120,4.0,4,F,F,True,At-Risk
+3132,1.0,1,B,B,True,On Track
+2986,1.0,2,B,C,False,On Track
+1965,2.0,2,C,C,True,On Track
+1731,2.0,3,C,D,False,At-Risk
+1512,4.0,4,F,F,True,At-Risk
+1407,2.0,2,C,C,True,On Track
+3240,1.0,3,B,D,False,At-Risk
+2350,4.0,4,F,F,True,At-Risk
+1774,4.0,4,F,F,True,At-Risk
+3378,2.0,2,C,C,True,On Track
+1288,4.0,4,F,F,True,At-Risk
+3056,4.0,4,F,F,True,At-Risk
+2792,3.0,3,D,D,True,At-Risk
+2139,3.0,2,D,C,False,On Track
+3386,1.0,4,B,F,False,At-Risk
+1256,3.0,2,D,C,False,On Track
+1869,4.0,4,F,F,True,At-Risk
+1857,4.0,4,F,F,True,At-Risk
+2822,3.0,4,D,F,False,At-Risk
+1946,1.0,1,B,B,True,On Track
+1654,3.0,3,D,D,True,At-Risk
+1243,2.0,2,C,C,True,On Track
+2941,4.0,4,F,F,True,At-Risk
+2519,4.0,4,F,F,True,At-Risk
+3194,4.0,4,F,F,True,At-Risk
+1227,4.0,4,F,F,True,At-Risk
+1808,4.0,4,F,F,True,At-Risk
+2403,4.0,3,F,D,False,At-Risk
+1598,4.0,4,F,F,True,At-Risk
+1613,4.0,4,F,F,True,At-Risk
+2310,4.0,4,F,F,True,At-Risk
+2460,4.0,4,F,F,True,At-Risk
+2829,3.0,2,D,C,False,On Track
+2169,3.0,4,D,F,False,At-Risk
+2008,1.0,1,B,B,True,On Track
+1992,4.0,4,F,F,True,At-Risk
+3155,2.0,2,C,C,True,On Track
+1555,1.0,1,B,B,True,On Track
+1597,2.0,2,C,C,True,On Track
+2512,4.0,4,F,F,True,At-Risk
+3324,3.0,2,D,C,False,On Track
+1163,0.0,1,A,B,False,On Track
+1990,3.0,2,D,C,False,On Track
+1571,2.0,3,C,D,False,At-Risk
+2994,4.0,4,F,F,True,At-Risk
+1140,3.0,4,D,F,False,At-Risk
+2259,3.0,3,D,D,True,At-Risk
+1889,2.0,2,C,C,True,On Track
+2797,1.0,1,B,B,True,On Track
+2757,2.0,2,C,C,True,On Track
+3160,4.0,4,F,F,True,At-Risk
+3315,2.0,2,C,C,True,On Track
+1061,4.0,3,F,D,False,At-Risk
+3308,3.0,4,D,F,False,At-Risk
+1852,4.0,4,F,F,True,At-Risk
+1678,1.0,1,B,B,True,On Track
+2616,4.0,2,F,C,False,On Track
+2540,2.0,2,C,C,True,On Track
+2241,1.0,1,B,B,True,On Track
+1037,4.0,4,F,F,True,At-Risk
+1011,3.0,4,D,F,False,At-Risk
+1890,3.0,3,D,D,True,At-Risk
+3148,4.0,4,F,F,True,At-Risk
+1374,3.0,3,D,D,True,At-Risk
+2645,4.0,4,F,F,True,At-Risk
+1939,4.0,4,F,F,True,At-Risk
+1811,4.0,4,F,F,True,At-Risk
+2679,4.0,4,F,F,True,At-Risk
+2079,1.0,1,B,B,True,On Track
+2900,1.0,1,B,B,True,On Track
+1126,2.0,3,C,D,False,At-Risk
+2466,4.0,4,F,F,True,At-Risk
+1511,4.0,4,F,F,True,At-Risk
+2441,4.0,4,F,F,True,At-Risk
+2209,4.0,4,F,F,True,At-Risk
+2282,4.0,4,F,F,True,At-Risk
+2050,4.0,4,F,F,True,At-Risk
+2932,3.0,3,D,D,True,At-Risk
+3203,3.0,1,D,B,False,On Track
+3076,2.0,2,C,C,True,On Track
+2269,4.0,4,F,F,True,At-Risk
+2703,4.0,4,F,F,True,At-Risk
+3111,4.0,4,F,F,True,At-Risk
+3029,0.0,1,A,B,False,On Track
+2448,1.0,1,B,B,True,On Track
+1796,4.0,4,F,F,True,At-Risk
+2009,2.0,2,C,C,True,On Track
+1071,2.0,2,C,C,True,On Track
+2290,1.0,2,B,C,False,On Track
+2386,2.0,2,C,C,True,On Track
+1619,3.0,3,D,D,True,At-Risk
+1519,4.0,4,F,F,True,At-Risk
+1494,4.0,4,F,F,True,At-Risk
+1255,4.0,4,F,F,True,At-Risk
+2404,3.0,3,D,D,True,At-Risk
+2870,4.0,4,F,F,True,At-Risk
+1473,1.0,1,B,B,True,On Track
+1779,4.0,4,F,F,True,At-Risk
+2014,4.0,4,F,F,True,At-Risk
+2640,1.0,1,B,B,True,On Track
+1025,4.0,4,F,F,True,At-Risk
+3166,3.0,3,D,D,True,At-Risk
+1218,2.0,2,C,C,True,On Track
+2229,4.0,4,F,F,True,At-Risk
+2973,4.0,4,F,F,True,At-Risk
+3183,2.0,4,C,F,False,At-Risk
+1955,1.0,2,B,C,False,On Track
+3051,4.0,4,F,F,True,At-Risk
+1057,4.0,4,F,F,True,At-Risk
+2216,3.0,2,D,C,False,On Track
+2686,4.0,4,F,F,True,At-Risk
+2041,4.0,4,F,F,True,At-Risk
+3014,0.0,2,A,C,False,On Track
+2828,1.0,1,B,B,True,On Track
+1692,4.0,4,F,F,True,At-Risk
+2929,3.0,2,D,C,False,On Track
+1573,2.0,3,C,D,False,At-Risk
+2273,2.0,2,C,C,True,On Track
+2489,4.0,4,F,F,True,At-Risk
+2617,1.0,2,B,C,False,On Track
+2589,3.0,3,D,D,True,At-Risk
+3092,4.0,4,F,F,True,At-Risk
+1320,3.0,3,D,D,True,At-Risk
+1824,4.0,4,F,F,True,At-Risk
+2718,4.0,4,F,F,True,At-Risk
+2830,4.0,4,F,F,True,At-Risk
+1362,3.0,3,D,D,True,At-Risk
+1437,1.0,1,B,B,True,On Track
+3021,4.0,4,F,F,True,At-Risk
+1313,4.0,4,F,F,True,At-Risk
+2899,4.0,4,F,F,True,At-Risk
+3175,4.0,4,F,F,True,At-Risk
+2561,4.0,4,F,F,True,At-Risk
+2181,4.0,4,F,F,True,At-Risk
+1834,2.0,2,C,C,True,On Track
+2827,4.0,4,F,F,True,At-Risk
+1859,2.0,1,C,B,False,On Track
+2583,2.0,2,C,C,True,On Track
+2028,3.0,4,D,F,False,At-Risk
+2405,4.0,4,F,F,True,At-Risk
+1153,4.0,4,F,F,True,At-Risk
+2992,3.0,4,D,F,False,At-Risk
+2452,4.0,3,F,D,False,At-Risk
+1349,4.0,3,F,D,False,At-Risk
+1736,4.0,4,F,F,True,At-Risk
+1186,4.0,4,F,F,True,At-Risk
+2131,3.0,4,D,F,False,At-Risk
+2084,4.0,4,F,F,True,At-Risk
+3328,4.0,3,F,D,False,At-Risk
+2429,4.0,4,F,F,True,At-Risk
+2025,4.0,4,F,F,True,At-Risk
+1644,4.0,4,F,F,True,At-Risk
+1666,3.0,4,D,F,False,At-Risk
+1318,1.0,1,B,B,True,On Track
+3247,4.0,4,F,F,True,At-Risk
+3221,0.0,4,A,F,False,At-Risk
+2132,1.0,2,B,C,False,On Track
+1118,4.0,4,F,F,True,At-Risk
+2186,4.0,4,F,F,True,At-Risk
+1058,4.0,4,F,F,True,At-Risk
+2761,4.0,4,F,F,True,At-Risk
+1174,2.0,2,C,C,True,On Track
+2274,3.0,2,D,C,False,On Track
+1941,4.0,4,F,F,True,At-Risk
+3295,0.0,4,A,F,False,At-Risk
+3249,3.0,4,D,F,False,At-Risk
+2903,0.0,1,A,B,False,On Track
+1664,4.0,4,F,F,True,At-Risk
+1073,2.0,3,C,D,False,At-Risk
+1602,4.0,4,F,F,True,At-Risk
+1926,0.0,1,A,B,False,On Track
+2032,4.0,4,F,F,True,At-Risk
+1652,4.0,4,F,F,True,At-Risk
+1762,3.0,2,D,C,False,On Track
+1397,4.0,4,F,F,True,At-Risk
+3122,4.0,4,F,F,True,At-Risk
+1611,4.0,4,F,F,True,At-Risk
+2499,3.0,3,D,D,True,At-Risk
+2677,4.0,4,F,F,True,At-Risk
+1471,1.0,1,B,B,True,On Track
+3321,3.0,4,D,F,False,At-Risk
+1200,4.0,4,F,F,True,At-Risk
+2055,4.0,4,F,F,True,At-Risk
+1315,2.0,2,C,C,True,On Track
+1882,4.0,4,F,F,True,At-Risk
+2902,2.0,2,C,C,True,On Track
+2666,4.0,4,F,F,True,At-Risk
+1357,1.0,1,B,B,True,On Track
+2262,3.0,2,D,C,False,On Track
+1578,4.0,4,F,F,True,At-Risk
+2931,4.0,4,F,F,True,At-Risk
+1484,4.0,4,F,F,True,At-Risk
+2894,4.0,4,F,F,True,At-Risk
+2892,4.0,4,F,F,True,At-Risk
+1837,2.0,2,C,C,True,On Track
+2507,2.0,2,C,C,True,On Track
+1312,1.0,2,B,C,False,On Track
+1240,4.0,4,F,F,True,At-Risk
+1710,4.0,4,F,F,True,At-Risk
+1462,3.0,3,D,D,True,At-Risk
+1121,3.0,4,D,F,False,At-Risk
+2171,4.0,4,F,F,True,At-Risk
+1711,3.0,3,D,D,True,At-Risk
+2814,4.0,4,F,F,True,At-Risk
+1212,4.0,4,F,F,True,At-Risk
+2391,4.0,4,F,F,True,At-Risk
+2291,4.0,4,F,F,True,At-Risk
+2164,2.0,1,C,B,False,On Track
+2775,3.0,2,D,C,False,On Track
+2167,2.0,2,C,C,True,On Track
+1444,3.0,3,D,D,True,At-Risk
+2843,4.0,4,F,F,True,At-Risk
+2080,4.0,4,F,F,True,At-Risk
+1306,3.0,3,D,D,True,At-Risk
+1366,4.0,4,F,F,True,At-Risk
+2094,4.0,4,F,F,True,At-Risk
+3263,1.0,4,B,F,False,At-Risk
+2993,2.0,3,C,D,False,At-Risk
+3144,0.0,1,A,B,False,On Track
+2083,3.0,2,D,C,False,On Track
+3126,3.0,3,D,D,True,At-Risk
+1547,3.0,2,D,C,False,On Track
+1072,4.0,4,F,F,True,At-Risk
+3387,4.0,4,F,F,True,At-Risk
+1925,4.0,4,F,F,True,At-Risk
+3142,2.0,2,C,C,True,On Track
+1724,2.0,3,C,D,False,At-Risk
+2228,0.0,1,A,B,False,On Track
+1194,3.0,3,D,D,True,At-Risk
+1680,4.0,4,F,F,True,At-Risk
+2508,0.0,1,A,B,False,On Track
+2819,4.0,4,F,F,True,At-Risk
+1601,3.0,3,D,D,True,At-Risk
+1325,2.0,1,C,B,False,On Track
+3050,2.0,3,C,D,False,At-Risk
+1023,4.0,4,F,F,True,At-Risk
+2355,4.0,4,F,F,True,At-Risk
+2325,4.0,4,F,F,True,At-Risk
+1836,4.0,4,F,F,True,At-Risk
+1044,2.0,2,C,C,True,On Track
+3006,3.0,4,D,F,False,At-Risk
+3012,2.0,1,C,B,False,On Track
+2635,4.0,4,F,F,True,At-Risk
+3070,4.0,4,F,F,True,At-Risk
+2121,0.0,1,A,B,False,On Track
+2027,3.0,3,D,D,True,At-Risk
+1632,2.0,2,C,C,True,On Track
+1983,4.0,4,F,F,True,At-Risk
+2815,4.0,4,F,F,True,At-Risk
+1239,4.0,4,F,F,True,At-Risk
+1402,1.0,2,B,C,False,On Track
+2248,4.0,4,F,F,True,At-Risk
+1819,4.0,4,F,F,True,At-Risk
+1706,3.0,4,D,F,False,At-Risk
+2873,3.0,3,D,D,True,At-Risk
+1942,4.0,4,F,F,True,At-Risk
+2245,1.0,1,B,B,True,On Track
+1671,4.0,4,F,F,True,At-Risk
+2267,4.0,4,F,F,True,At-Risk
+2724,4.0,4,F,F,True,At-Risk
+2575,2.0,2,C,C,True,On Track
+2817,2.0,2,C,C,True,On Track
+2673,4.0,4,F,F,True,At-Risk
+2776,4.0,4,F,F,True,At-Risk
+2729,4.0,4,F,F,True,At-Risk
+1083,2.0,2,C,C,True,On Track
+1302,4.0,4,F,F,True,At-Risk
+1544,3.0,3,D,D,True,At-Risk
