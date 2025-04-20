@@ -3,5 +3,5 @@ services:
     name: brightpath-academy-app
     env: python
     buildCommand: pip install -r Dash_App/requirements.txt
-    startCommand: python Dash_App/Bright.py
+   startCommand: gunicorn Dash_App.Bright:server
     plan: free
