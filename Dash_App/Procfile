@@ -1,1 +1,2 @@
-web: gunicorn Bright:server
+web: gunicorn Dash_App.Bright:server
+
