@@ -181,6 +181,37 @@ app.layout = dbc.Container([
                         ], width=6),
                     ], className="mb-3"),
                     
+                    dbc.Row([
+                        dbc.Col([
+                            html.Label("Behind the Scenes:", className="form-label"),
+                            dcc.Dropdown(
+                                id='show-model-selection',
+                                options=[
+                                    {'label': 'No', 'value': 0},
+                                    {'label': 'Yes', 'value': 1}
+                                ],
+                                value=0,
+                                className="form-control"
+                            )
+                        ], width=12),
+                    ], className="mb-3"),
+                    
+                    dbc.Row([
+                        dbc.Col([
+                            html.Label("Model Selection:", className="form-label"),
+                            dcc.Dropdown(
+                                id='model-selection',
+                                options=[
+                                    {'label': 'Logistic Regression', 'value': 'logistic'},
+                                    {'label': 'Random Forest', 'value': 'random_forest'}
+                                ],
+                                value='logistic',
+                                className="form-control",
+                                style={'display': 'none'}
+                            )
+                        ], width=12),
+                    ], className="mb-3"),
+                    
                     dbc.Button("Predict Grade", id='predict-button', color="primary", className="predict-button w-100 mt-4"),
                 ])
             ], className="input-card")
@@ -218,7 +249,8 @@ app.layout = dbc.Container([
 @app.callback(
     [Output('prediction-output', 'children'),
      Output('prediction-explanation', 'children')],
-    [Input('predict-button', 'n_clicks')],
+    [Input('predict-button', 'n_clicks'),
+     Input('model-selection', 'value')],
     [State('age', 'value'),
      State('gender', 'value'),
      State('ethnicity', 'value'),
@@ -232,7 +264,7 @@ app.layout = dbc.Container([
      State('music', 'value'),
      State('volunteering', 'value')]
 )
-def predict_grade(n_clicks, age, gender, ethnicity, parental_education, 
+def predict_grade(n_clicks, model_type, age, gender, ethnicity, parental_education, 
                  study_time, absences, tutoring, parental_support,
                  extracurricular, sports, music, volunteering):
     if not n_clicks or None in [age, gender, ethnicity, parental_education, 
@@ -241,26 +273,42 @@ def predict_grade(n_clicks, age, gender, ethnicity, parental_education,
         return html.Div("Please fill in all fields", className="text-danger"), ""
     
     try:
-        model_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', 'logistic_model.pkl')
-        scaler_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', 'logistic_scaler.pkl')
+        if model_type not in ['logistic', 'random_forest']:
+            model_type = 'logistic'
+            
+        model_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', f'{model_type}_model.pkl')
+        scaler_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', f'{model_type}_scaler.pkl')
+        
+        feature_names = ['Age', 'Gender', 'Ethnicity', 'ParentalEducation', 
+                        'StudyTimeWeekly', 'Absences', 'Tutoring', 'ParentalSupport', 
+                        'Extracurricular', 'Sports', 'Music', 'Volunteering']
+        
+        features_df = pd.DataFrame([[age, gender, ethnicity, parental_education, 
+                                   study_time, absences, tutoring, parental_support,
+                                   extracurricular, sports, music, volunteering]], 
+                                 columns=feature_names)
         
         with open(model_path, 'rb') as file:
             model = pickle.load(file)
-        with open(scaler_path, 'rb') as file:
-            scaler = pickle.load(file)
+            
+        if model_type == 'logistic':
+            with open(scaler_path, 'rb') as file:
+                scaler = pickle.load(file)
+            features_scaled = scaler.transform(features_df)
+            prediction = model.predict(features_scaled)[0]
+        else:
+            prediction = model.predict(features_df)[0]
         
-        features = [[age, gender, ethnicity, parental_education, 
-                    study_time, absences, tutoring, parental_support,
-                    extracurricular, sports, music, volunteering]]
-        features_scaled = scaler.transform(features)
-        
-        prediction = model.predict(features_scaled)[0]
         grade_map = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'F'}
         grade = grade_map[prediction]
         grade_class = f"grade-{grade.lower()}"
         
+        model_name = "Logistic Regression" if model_type == 'logistic' else "Random Forest"
         return [
-            html.H2(f"Predicted Grade: {grade}", className=grade_class),
+            html.Div([
+                html.H2(f"Predicted Grade: {grade}", className=grade_class),
+                html.P(f"Model used: {model_name}", className="text-muted")
+            ]),
             html.P(get_grade_explanation(grade), className="mt-3")
         ]
     except Exception as e:
@@ -297,7 +345,6 @@ def update_graph(n_clicks, age, study_time, absences, parental_support, tutoring
             'layout': {'title': 'Please fill in all fields to see student analysis'}
         }
 
-    # Create student values vs. recommended values comparison
     features = {
         'Study Hours': {'Current': study_time, 'Recommended': 15},
         'Attendance': {'Current': 30 - absences, 'Recommended': 28},
@@ -312,7 +359,6 @@ def update_graph(n_clicks, age, study_time, absences, parental_support, tutoring
     
     fig = go.Figure()
     
-    # Add bars for current values
     fig.add_trace(go.Bar(
         x=x_categories,
         y=current_values,
@@ -322,7 +368,6 @@ def update_graph(n_clicks, age, study_time, absences, parental_support, tutoring
         textposition='auto',
     ))
     
-    # Add bars for recommended values
     fig.add_trace(go.Bar(
         x=x_categories,
         y=recommended_values,
@@ -331,8 +376,7 @@ def update_graph(n_clicks, age, study_time, absences, parental_support, tutoring
         text=recommended_values,
         textposition='auto',
     ))
-    
-    # Update layout
+
     fig.update_layout(
         title='Student Performance Factors Analysis',
         xaxis_title='Key Performance Indicators',
@@ -351,6 +395,15 @@ def update_graph(n_clicks, age, study_time, absences, parental_support, tutoring
     )
     
     return fig
+
+@app.callback(
+    Output('model-selection', 'style'),
+    [Input('show-model-selection', 'value')]
+)
+def toggle_model_selection(show):
+    if show:
+        return {'display': 'block'}
+    return {'display': 'none'}
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 8050))
