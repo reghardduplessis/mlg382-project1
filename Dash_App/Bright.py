@@ -9,28 +9,12 @@ import os
 from dash.dependencies import Input, Output, State
 from plotly.subplots import make_subplots
 import numpy as np
-
-
-import torch.nn as nn
-
-class MLPModel(nn.Module):
-    def __init__(self, input_dim, hidden_dim, num_layers):
-        super(MLPModel, self).__init__()
-        layers = []
-        layers.append(nn.Linear(input_dim, hidden_dim))  # firsst layer, basic stuff
-        layers.append(nn.ReLU())  # actvation, makes it non-lin
-        
-        for _ in range(num_layers - 1):
-            layers.append(nn.Linear(hidden_dim, hidden_dim))  # more layers, more powr
-            layers.append(nn.ReLU())
-        
-        layers.append(nn.Linear(hidden_dim, 1))  # last bit, output
-        self.model = nn.Sequential(*layers)  # stack
-
-    def forward(self, x):
-        return self.model(x)  # just run it thru
-
+import sys
+import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.append(current_dir)
+from mlp_model import MLPModel
 
 data_path = os.path.join(current_dir, '..', 'SRC', 'Student_performance_data.csv')  # path to data
 try:
@@ -267,6 +251,7 @@ app.layout = dbc.Container([
         ], width=12, lg=6)
     ])
 ], fluid=True, className="app-container")
+
 def map_gpa_to_grade(gpa):
     # map GPA to letter, bit basic
     if gpa >= 3.7:
@@ -410,9 +395,6 @@ def predict_grade(n_clicks, model_type, age, gender, ethnicity, parental_educati
 
     except Exception as e:
         return html.Div(f"Error: {str(e)}", className="text-danger"), ""  # summin went wrong, soz
-
-
-
 
 def get_grade_explanation(grade):
     explanations = {
