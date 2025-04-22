@@ -17,22 +17,22 @@ class MLPModel(nn.Module):
     def __init__(self, input_dim, hidden_dim, num_layers):
         super(MLPModel, self).__init__()
         layers = []
-        layers.append(nn.Linear(input_dim, hidden_dim))
-        layers.append(nn.ReLU())
+        layers.append(nn.Linear(input_dim, hidden_dim))  # firsst layer, basic stuff
+        layers.append(nn.ReLU())  # actvation, makes it non-lin
         
         for _ in range(num_layers - 1):
-            layers.append(nn.Linear(hidden_dim, hidden_dim))
+            layers.append(nn.Linear(hidden_dim, hidden_dim))  # more layers, more powr
             layers.append(nn.ReLU())
         
-        layers.append(nn.Linear(hidden_dim, 1))
-        self.model = nn.Sequential(*layers)
+        layers.append(nn.Linear(hidden_dim, 1))  # last bit, output
+        self.model = nn.Sequential(*layers)  # stack
 
     def forward(self, x):
-        return self.model(x)
+        return self.model(x)  # just run it thru
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
-data_path = os.path.join(current_dir, '..', 'SRC', 'Student_performance_data.csv')
+data_path = os.path.join(current_dir, '..', 'SRC', 'Student_performance_data.csv')  # path to data
 try:
     data = pd.read_csv(data_path)
 except FileNotFoundError:
@@ -268,6 +268,7 @@ app.layout = dbc.Container([
     ])
 ], fluid=True, className="app-container")
 def map_gpa_to_grade(gpa):
+    # map GPA to letter, bit basic
     if gpa >= 3.7:
         return 'A'
     elif gpa >= 3.0:
@@ -304,23 +305,23 @@ def predict_grade(n_clicks, model_type, age, gender, ethnicity, parental_educati
     if not n_clicks or None in [age, gender, ethnicity, parental_education, 
                                 study_time, absences, tutoring, parental_support,
                                 extracurricular, sports, music, volunteering]:
-        return html.Div("Please fill in all fields", className="text-danger"), ""
+        return html.Div("Please fill in all fields", className="text-danger"), ""  # tell 'em off if not filled
 
     try:
         if model_type not in ['logistic', 'random_forest', 'mlp', 'xgboost']:
-            model_type = 'logistic'
+            model_type = 'logistic'  # fallback
 
         # Load Model
         if model_type == 'mlp':
-            model_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', 'mlp_gpa_model.pkl')
-            scaler_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', 'logistic_scaler.pkl')  # Reusing logistic scaler
+            model_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', 'mlp_gpa_model.pkl')  # mlp model
+            scaler_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', 'logistic_scaler.pkl')  # take scaler from logistic
 
             with open(model_path, 'rb') as f:
-                model = pickle.load(f)
-            model.eval()
+                model = pickle.load(f)  # hope it's not corrupted
+            model.eval()  # set to eval, no training here
 
             with open(scaler_path, 'rb') as f:
-                scaler = pickle.load(f)
+                scaler = pickle.load(f)  # scale it up
 
         elif model_type == 'logistic':
             model_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', 'logistic_model.pkl')
@@ -344,20 +345,20 @@ def predict_grade(n_clicks, model_type, age, gender, ethnicity, parental_educati
         # Input features
         feature_names = ['Age', 'Gender', 'Ethnicity', 'ParentalEducation', 
                          'StudyTimeWeekly', 'Absences', 'Tutoring', 'ParentalSupport', 
-                         'Extracurricular', 'Sports', 'Music', 'Volunteering']
+                         'Extracurricular', 'Sports', 'Music', 'Volunteering']  # all the bits
         
         features_df = pd.DataFrame([[age, gender, ethnicity, parental_education, 
                                      study_time, absences, tutoring, parental_support,
                                      extracurricular, sports, music, volunteering]], 
-                                   columns=feature_names)
+                                   columns=feature_names)  # one row, all the stuff
 
         #MLP Model
         if model_type == 'mlp':
-            import torch
-            features_scaled = scaler.transform(features_df)
-            features_tensor = torch.tensor(features_scaled, dtype=torch.float32)
-            gpa = model(features_tensor).item()
-            grade = map_gpa_to_grade(gpa)
+            import torch  # only if needed
+            features_scaled = scaler.transform(features_df)  # gotta scale it, else model gets confused
+            features_tensor = torch.tensor(features_scaled, dtype=torch.float32)  # torch likes tensors, not pandas
+            gpa = model(features_tensor).item()  # get the number out
+            grade = map_gpa_to_grade(gpa)  # turn it into a letter
             return [
                 html.Div([
                     html.H2(f"Predicted GPA: {gpa:.2f}", className="text-info"),
@@ -369,9 +370,9 @@ def predict_grade(n_clicks, model_type, age, gender, ethnicity, parental_educati
 
         #Logistic Regression Model
         elif model_type == 'logistic':
-            features_scaled = scaler.transform(features_df)
-            prediction = model.predict(features_scaled)[0]
-            grade_map = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'F'}
+            features_scaled = scaler.transform(features_df)  # scale it, again
+            prediction = model.predict(features_scaled)[0]  # get the pred, first one
+            grade_map = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'F'}  # mapping, bit manual
             grade = grade_map[prediction]
             return [
                 html.Div([
@@ -383,7 +384,7 @@ def predict_grade(n_clicks, model_type, age, gender, ethnicity, parental_educati
 
         #Random Forest Model
         elif model_type == 'random_forest':
-            prediction = model.predict(features_df)[0]
+            prediction = model.predict(features_df)[0]  # no scaling, forest do not care
             grade_map = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'F'}
             grade = grade_map[prediction]
             return [
@@ -396,7 +397,7 @@ def predict_grade(n_clicks, model_type, age, gender, ethnicity, parental_educati
 
         #XGBoost Model
         elif model_type == 'xgboost':
-            prediction = model.predict(features_df)[0]
+            prediction = model.predict(features_df)[0]  # xgboost, same as forest
             grade_map = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'F'}
             grade = grade_map[prediction]
             return [
@@ -408,7 +409,7 @@ def predict_grade(n_clicks, model_type, age, gender, ethnicity, parental_educati
             ]
 
     except Exception as e:
-        return html.Div(f"Error: {str(e)}", className="text-danger"), ""
+        return html.Div(f"Error: {str(e)}", className="text-danger"), ""  # summin went wrong, soz
 
 
 
@@ -421,7 +422,7 @@ def get_grade_explanation(grade):
         'D': "Below average performance. The student may need additional support.",
         'F': "Student is struggling and needs immediate intervention and support."
     }
-    return explanations.get(grade, "")
+    return explanations.get(grade, "")  # just grab the explainer
 
 @app.callback(
     Output('feature-graph', 'figure'),
@@ -442,21 +443,21 @@ def update_graph(n_clicks, age, study_time, absences, parental_support, tutoring
         return {
             'data': [], 
             'layout': {'title': 'Please fill in all fields to see student analysis'}
-        }
+        }  # no click, no graph, simple
 
     features = {
-        'Study Hours': {'Current': study_time, 'Recommended': 15},
-        'Attendance': {'Current': 30 - absences, 'Recommended': 28},
-        'Parent Support': {'Current': parental_support, 'Recommended': 3},
-        'Tutoring': {'Current': tutoring, 'Recommended': 1},
-        'Activities': {'Current': sum([extracurricular, sports, music, volunteering]), 'Recommended': 2}
+        'Study Hours': {'Current': study_time, 'Recommended': 15},  # 15 a good number
+        'Attendance': {'Current': 30 - absences, 'Recommended': 28},  # less absences, more better
+        'Parent Support': {'Current': parental_support, 'Recommended': 3},  # 3 is alright
+        'Tutoring': {'Current': tutoring, 'Recommended': 1},  # 1 means yes
+        'Activities': {'Current': sum([extracurricular, sports, music, volunteering]), 'Recommended': 2}  # add em up, more is good
     }
     
-    x_categories = list(features.keys())
-    current_values = [features[cat]['Current'] for cat in x_categories]
-    recommended_values = [features[cat]['Recommended'] for cat in x_categories]
+    x_categories = list(features.keys())  # get the names
+    current_values = [features[cat]['Current'] for cat in x_categories]  # what they got
+    recommended_values = [features[cat]['Recommended'] for cat in x_categories]  # what they shud have
     
-    fig = go.Figure()
+    fig = go.Figure()  # start the fig
     
     fig.add_trace(go.Bar(
         x=x_categories,
@@ -465,7 +466,7 @@ def update_graph(n_clicks, age, study_time, absences, parental_support, tutoring
         marker_color='crimson',
         text=current_values,
         textposition='auto',
-    ))
+    ))  # red bars, current stuff
     
     fig.add_trace(go.Bar(
         x=x_categories,
@@ -474,7 +475,7 @@ def update_graph(n_clicks, age, study_time, absences, parental_support, tutoring
         marker_color='lightseagreen',
         text=recommended_values,
         textposition='auto',
-    ))
+    ))  # greenish bars, what we want
 
     fig.update_layout(
         title='Student Performance Factors Analysis',
@@ -491,9 +492,9 @@ def update_graph(n_clicks, age, study_time, absences, parental_support, tutoring
             xanchor='right',
             x=1
         )
-    )
+    )  # make it look nice
     
-    return fig
+    return fig  # job done
 
 @app.callback(
     Output('model-selection', 'style'),
@@ -501,15 +502,11 @@ def update_graph(n_clicks, age, study_time, absences, parental_support, tutoring
 )
 def toggle_model_selection(show):
     if show:
-        return {'display': 'block'}
-    return {'display': 'none'}
+        return {'display': 'block'}  # show it if ticked
+    return {'display': 'none'}  # hide it if not
 
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 8050))
-  app.run(debug=False, port=port, host="0.0.0.0")
-
-#Run App
-#if __name__ == "__main__":
- #   app.run(debug=True)
+    port = int(os.environ.get("PORT", 8050))  # get port, or just 8050
+    app.run(debug=False, port=port, host="0.0.0.0")  # run it, fingers crossed
 
