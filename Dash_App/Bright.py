@@ -10,6 +10,26 @@ from dash.dependencies import Input, Output, State
 from plotly.subplots import make_subplots
 import numpy as np
 
+
+import torch.nn as nn
+
+class MLPModel(nn.Module):
+    def __init__(self, input_dim, hidden_dim, num_layers):
+        super(MLPModel, self).__init__()
+        layers = []
+        layers.append(nn.Linear(input_dim, hidden_dim))
+        layers.append(nn.ReLU())
+        
+        for _ in range(num_layers - 1):
+            layers.append(nn.Linear(hidden_dim, hidden_dim))
+            layers.append(nn.ReLU())
+        
+        layers.append(nn.Linear(hidden_dim, 1))
+        self.model = nn.Sequential(*layers)
+
+    def forward(self, x):
+        return self.model(x)
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 data_path = os.path.join(current_dir, '..', 'SRC', 'Student_performance_data.csv')
@@ -203,7 +223,9 @@ app.layout = dbc.Container([
                                 id='model-selection',
                                 options=[
                                     {'label': 'Logistic Regression', 'value': 'logistic'},
-                                    {'label': 'Random Forest', 'value': 'random_forest'}
+                                    {'label': 'Random Forest', 'value': 'random_forest'},
+                                    {'label': 'MLP GPA Model', 'value': 'mlp'},
+                                    {'label': 'XGBoost Classifier', 'value': 'xgboost'}
                                 ],
                                 value='logistic',
                                 className="form-control",
@@ -245,6 +267,17 @@ app.layout = dbc.Container([
         ], width=12, lg=6)
     ])
 ], fluid=True, className="app-container")
+def map_gpa_to_grade(gpa):
+    if gpa >= 3.7:
+        return 'A'
+    elif gpa >= 3.0:
+        return 'B'
+    elif gpa >= 2.0:
+        return 'C'
+    elif gpa >= 1.0:
+        return 'D'
+    else:
+        return 'F'
 
 @app.callback(
     [Output('prediction-output', 'children'),
@@ -264,55 +297,121 @@ app.layout = dbc.Container([
      State('music', 'value'),
      State('volunteering', 'value')]
 )
+
 def predict_grade(n_clicks, model_type, age, gender, ethnicity, parental_education, 
-                 study_time, absences, tutoring, parental_support,
-                 extracurricular, sports, music, volunteering):
+                  study_time, absences, tutoring, parental_support,
+                  extracurricular, sports, music, volunteering):
     if not n_clicks or None in [age, gender, ethnicity, parental_education, 
-                               study_time, absences, tutoring, parental_support,
-                               extracurricular, sports, music, volunteering]:
+                                study_time, absences, tutoring, parental_support,
+                                extracurricular, sports, music, volunteering]:
         return html.Div("Please fill in all fields", className="text-danger"), ""
-    
+
     try:
-        if model_type not in ['logistic', 'random_forest']:
+        if model_type not in ['logistic', 'random_forest', 'mlp', 'xgboost']:
             model_type = 'logistic'
-            
-        model_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', f'{model_type}_model.pkl')
-        scaler_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', f'{model_type}_scaler.pkl')
-        
+
+        # Load Model
+        if model_type == 'mlp':
+            model_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', 'mlp_gpa_model.pkl')
+            scaler_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', 'logistic_scaler.pkl')  # Reusing logistic scaler
+
+            with open(model_path, 'rb') as f:
+                model = pickle.load(f)
+            model.eval()
+
+            with open(scaler_path, 'rb') as f:
+                scaler = pickle.load(f)
+
+        elif model_type == 'logistic':
+            model_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', 'logistic_model.pkl')
+            scaler_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', 'logistic_scaler.pkl')
+
+            with open(model_path, 'rb') as f:
+                model = pickle.load(f)
+            with open(scaler_path, 'rb') as f:
+                scaler = pickle.load(f)
+
+        elif model_type == 'random_forest':
+            model_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', 'random_forest_model.pkl')
+            with open(model_path, 'rb') as f:
+                model = pickle.load(f)
+
+        elif model_type == 'xgboost':
+            model_path = os.path.join(current_dir, '..', 'Artifacts', 'PLK', 'xgboost_model.pkl')
+            with open(model_path, 'rb') as f:
+                model = pickle.load(f)
+
+        # Input features
         feature_names = ['Age', 'Gender', 'Ethnicity', 'ParentalEducation', 
-                        'StudyTimeWeekly', 'Absences', 'Tutoring', 'ParentalSupport', 
-                        'Extracurricular', 'Sports', 'Music', 'Volunteering']
+                         'StudyTimeWeekly', 'Absences', 'Tutoring', 'ParentalSupport', 
+                         'Extracurricular', 'Sports', 'Music', 'Volunteering']
         
         features_df = pd.DataFrame([[age, gender, ethnicity, parental_education, 
-                                   study_time, absences, tutoring, parental_support,
-                                   extracurricular, sports, music, volunteering]], 
-                                 columns=feature_names)
-        
-        with open(model_path, 'rb') as file:
-            model = pickle.load(file)
-            
-        if model_type == 'logistic':
-            with open(scaler_path, 'rb') as file:
-                scaler = pickle.load(file)
+                                     study_time, absences, tutoring, parental_support,
+                                     extracurricular, sports, music, volunteering]], 
+                                   columns=feature_names)
+
+        #MLP Model
+        if model_type == 'mlp':
+            import torch
+            features_scaled = scaler.transform(features_df)
+            features_tensor = torch.tensor(features_scaled, dtype=torch.float32)
+            gpa = model(features_tensor).item()
+            grade = map_gpa_to_grade(gpa)
+            return [
+                html.Div([
+                    html.H2(f"Predicted GPA: {gpa:.2f}", className="text-info"),
+                    html.H4(f"Mapped Grade: {grade}", className=f"grade-{grade.lower()}"),
+                    html.P("Model used: MLP GPA Model", className="text-muted")
+                ]),
+                html.P(get_grade_explanation(grade), className="mt-3")
+            ]
+
+        #Logistic Regression Model
+        elif model_type == 'logistic':
             features_scaled = scaler.transform(features_df)
             prediction = model.predict(features_scaled)[0]
-        else:
+            grade_map = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'F'}
+            grade = grade_map[prediction]
+            return [
+                html.Div([
+                    html.H2(f"Predicted Grade: {grade}", className=f"grade-{grade.lower()}"),
+                    html.P("Model used: Logistic Regression", className="text-muted")
+                ]),
+                html.P(get_grade_explanation(grade), className="mt-3")
+            ]
+
+        #Random Forest Model
+        elif model_type == 'random_forest':
             prediction = model.predict(features_df)[0]
-        
-        grade_map = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'F'}
-        grade = grade_map[prediction]
-        grade_class = f"grade-{grade.lower()}"
-        
-        model_name = "Logistic Regression" if model_type == 'logistic' else "Random Forest"
-        return [
-            html.Div([
-                html.H2(f"Predicted Grade: {grade}", className=grade_class),
-                html.P(f"Model used: {model_name}", className="text-muted")
-            ]),
-            html.P(get_grade_explanation(grade), className="mt-3")
-        ]
+            grade_map = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'F'}
+            grade = grade_map[prediction]
+            return [
+                html.Div([
+                    html.H2(f"Predicted Grade: {grade}", className=f"grade-{grade.lower()}"),
+                    html.P("Model used: Random Forest", className="text-muted")
+                ]),
+                html.P(get_grade_explanation(grade), className="mt-3")
+            ]
+
+        #XGBoost Model
+        elif model_type == 'xgboost':
+            prediction = model.predict(features_df)[0]
+            grade_map = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'F'}
+            grade = grade_map[prediction]
+            return [
+                html.Div([
+                    html.H2(f"Predicted Grade: {grade}", className=f"grade-{grade.lower()}"),
+                    html.P("Model used: XGBoost Classifier", className="text-muted")
+                ]),
+                html.P(get_grade_explanation(grade), className="mt-3")
+            ]
+
     except Exception as e:
-        return f"Error: {str(e)}", ""
+        return html.Div(f"Error: {str(e)}", className="text-danger"), ""
+
+
+
 
 def get_grade_explanation(grade):
     explanations = {
@@ -405,6 +504,12 @@ def toggle_model_selection(show):
         return {'display': 'block'}
     return {'display': 'none'}
 
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 8050))
-    app.run(debug=False, port=port, host="0.0.0.0")
+  app.run(debug=False, port=port, host="0.0.0.0")
+
+#Run App
+#if __name__ == "__main__":
+ #   app.run(debug=True)
+
