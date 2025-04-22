@@ -505,4 +505,9 @@ def toggle_model_selection(show):
         return {'display': 'block'}  # show it if ticked
     return {'display': 'none'}  # hide it if not
 
+server = app.server
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 8050))
+    app.run(debug=False, port=port, host="0.0.0.0")
+
 
